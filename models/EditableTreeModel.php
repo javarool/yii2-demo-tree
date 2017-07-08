@@ -39,7 +39,7 @@ class EditableTreeModel extends \yii\base\Model {
         if (count($path) == 0) {
             $node->addChild($item);
         } else {
-            $lastId = array_pop($path);
+            $lastId = array_shift($path);
             foreach ($node->childs as $node) {
                 if ($node->item->id == $lastId) {
                     $this->insertRecursively($node, $item, $path);

@@ -7,8 +7,7 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use app\views\tree\TreeRender;
 ?>
-<h1>Navigation menu</h1>
-
+<h1>Объектно-ориентированное программирование</h1>
 <?php
 // добавляем пустые модели для создания новых узлов
 $tree->each(function($node, $level, $index) {
@@ -16,18 +15,13 @@ $tree->each(function($node, $level, $index) {
     $node->addChild($newitem);
 });
 
-echo $this->render('\..\tree\_tree_render', [
-'tree' => $tree
- ]);
-
-$form = ActiveForm::begin(['action' => ['update'], 'layout' => 'horizontal']);
-echo '<br>';
-echo Html::submitButton('Сабмит', ['class' => 'btn btn-primary']);
-ActiveForm::end();
-
-echo '<pre>';
-print_r($tree);
-echo '</pre>';
+echo Html::a(($tree_open ? 'Свернуть' : 'Развернуть') . 'дерево', ['index', 'open' => !$tree_open], ['class' => 'btn btn-primary']);
 ?>
-<?php ?>
-
+<p>
+    <?=
+    $this->render('\..\tree\_tree_render', [
+        'tree' => $tree,
+        'tree_open' => $tree_open,
+    ]);
+    ?>
+</p>
