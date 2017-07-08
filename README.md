@@ -4,25 +4,27 @@ Demo-editable-tree on yii2 & bootstrap & css & js
 
 Файл с данными для mysql в директории __MYSQL_BASE
 По умолчанию, настроена удаленная БД - рабочая.
-
-Список созданных файлов:
-controllers/MenuController.php
-models/EditableTreeModel.php
-models/MenuItemModel.php
-views/tree/_tree_render.php
-views/menu/edit.php
-views/menu/index.php
-
 Для запуска достаточно скопировать файлы на хостинг. 
 ВНИМАНИЕ. В репозитории нет необходимой для работы директории vendor. Должна быть установлена через Composer
-
 Приложение находиться по ссылке:
-    [host]/web/index.php
+     [host]/web/index.php
+
+
+
+Список созданных файлов:
+-------------------
+
+     controllers/MenuController.php
+     models/EditableTreeModel.php
+     models/MenuItemModel.php
+     views/tree/_tree_render.php
+     views/menu/edit.php
+     views/menu/index.php
 
 
 
 Yii 2 Basic Project Template
-============================
+========================================================
 
 Yii 2 Basic Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
 rapidly creating small projects.
