@@ -74,7 +74,7 @@ function paintLeafBegin($item, $parentPath,  $level,  $open = true) {
         echo Html::a('...', ['create', 'path' => $parentPath], ['title'=>'Добавить', 'class' => 'glyphicon glyphicon-pencil', 'style' => $style]);
     } else {
             echo Html::a('['.$item->name//.' id:'.$item->id
-                    .'] ', $item->link);
+                    .'] ', $item->link, ['target'=>'blank']);
         if ($level > 0) {            
             echo Html::a('', ['update', 'id' => $item->id, 'path' => $item->parents_id], ['title'=>'Редактировать', 'class' => 'glyphicon glyphicon-edit', 'style' => $style]);
             echo Html::a('', ['delete', 'id' => $item->id, 'path' => $item->parents_id], ['title'=>'Удалить', 'class' => 'glyphicon glyphicon-remove', 'style' => $style]);

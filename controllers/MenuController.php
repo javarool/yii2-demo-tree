@@ -36,7 +36,6 @@ class MenuController extends \yii\web\Controller {
     }
 
     public function actionUpdate($id, $path = '') {
-        p(\Yii::$app->request->post());
         $model = $this->findItem($id);
 
         if ($model->load(\Yii::$app->request->post())) {
@@ -56,7 +55,14 @@ class MenuController extends \yii\web\Controller {
 
     public function actionDelete($id) {
         $model = $this->findItem($id);
-        MenuItemModel::deleteAll('`parents_id` LIKE \'' . $model->parents_id . '%\'');
+//        p($model);exit();
+        $path = $model->getPathForChilds();
+        if ($path != '') {
+            $answer2 = MenuItemModel::deleteAll('`parents_id` LIKE \'' . $path . '%\'');
+            p($answer2);
+        }
+        
+        $model->delete();
         return $this->redirect(['index']);
     }
 
